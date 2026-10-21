@@ -1,0 +1,14 @@
+<main class="main-bills">
+  <div class="container">
+    <nav class="menu">
+      <button class="button" [class.active]="activeComponent == ComponentsType.CalculatePercentage" (click)="navigateToCalculatePercentage()">Calcular porcentagem</button>
+      <button class="button" [class.active]="activeComponent == ComponentsType.UpdateSalary" (click)="navigateToUpdateSalary()">Atualizar salário</button>
+    </nav>
+
+    <div class="content">
+      <gamidas-calculate-percentage
+        *ngIf="activeComponent == ComponentsType.CalculatePercentage"></gamidas-calculate-percentage>
+      <gamidas-update-salary *ngIf="activeComponent == ComponentsType.UpdateSalary"></gamidas-update-salary>
+    </div>
+  </div>
+</main>

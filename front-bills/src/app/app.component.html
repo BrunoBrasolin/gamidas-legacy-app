@@ -1,0 +1,13 @@
+<main class="bills-content">
+  <div class="side-menu">
+    <h1>Contas</h1>
+    <button class="button" (click)="navigateToCalculatePercentage()">Calcular porcentagem</button>
+    <button class="button" (click)="navigateToUpdateSalary()">Atualizar
+      salário</button>
+  </div>
+
+  <div class="side-content">
+    <app-calculate-percentage *ngIf="activeComponent == ComponentsType.CalculatePercentage"></app-calculate-percentage>
+    <app-update-salary *ngIf="activeComponent == ComponentsType.UpdateSalary"></app-update-salary>
+  </div>
+</main>

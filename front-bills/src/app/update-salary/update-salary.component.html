@@ -1,0 +1,23 @@
+<main class="main">
+  <h1>Atualizar Salário</h1>
+
+  <div>
+    <label>Valor</label>
+    <span matTextPrefix>R$ &nbsp;</span>
+    <input matInput type="number" [(ngModel)]="salary" />
+  </div>
+
+  <br>
+
+  <div>
+    <label>Pessoa</label>
+    <select [(ngModel)]="person">
+      <option [value]="0">Letícia</option>
+      <option [value]="1">Bruno</option>
+    </select>
+  </div>
+
+  <br>
+
+  <button mat-raised-button color="primary" (click)="onClickAtualizar()">Atualizar</button>
+</main>

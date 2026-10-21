@@ -1,0 +1,13 @@
+<main class="module-selection">
+  <gamidas-page-title>Selecione um módulo</gamidas-page-title>
+  <gamidas-page-subtitle>Selecione um módulo que deseja entrar.</gamidas-page-subtitle>
+
+  <div class="modules">
+    <a *ngFor="let module of modules" [routerLink]="[module.url]" class="module-card">
+      <div class="module-image">
+        <gamidas-icon [name]="module.name" [size]="20"></gamidas-icon>
+      </div>
+      <h2>{{ module.name }}</h2>
+    </a>
+  </div>
+</main>

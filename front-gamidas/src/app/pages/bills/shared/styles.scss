@@ -1,0 +1,59 @@
+@use "sass:map";
+@use '../../../../assets/scss' as *;
+
+.main {
+  background-color: map.get($cyberpunk-theme, 'dark-gray');
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 0 10px map.get($cyberpunk-theme, 'neon-blue');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  .title {
+    font-size: 2.5rem;
+    color: map.get($cyberpunk-theme, 'pink');
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10 map.get($cyberpunk-theme, 'pink-neon');
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .label {
+      color: map.get($cyberpunk-theme, 'light-text');
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .button-row {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      align-items: center;
+
+      gamidas-button {
+        margin: .5rem 0;
+      }
+    }
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-shadow: 0 0 5px map.get($cyberpunk-theme, 'neon-blue');
+  }
+
+  .text {
+    font-size: 1.2rem;
+    color: map.get($cyberpunk-theme, 'light-text');
+    margin: 0.5rem 0;
+  }
+}
