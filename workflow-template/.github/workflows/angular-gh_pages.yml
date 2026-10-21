@@ -1,0 +1,34 @@
+name: Angular GH Pages
+
+on:
+  workflow_call:
+    inputs:
+      applicationName:
+        required: true
+        type: string
+      cname:
+        required: true
+        type: string
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.*'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+        
+      - name: Deploy to GitHub Pages
+        run: ng deploy --cname=${{ inputs.cname }} --repo=https://github.com/BrunoBrasolin/${{ inputs.applicationName }}.git --name="Bruno Brasolin" --email=brunobrasolinc@gmail.com
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
