@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: publish
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - '*'
+  release:
+    types:
+      - published
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  nuget-workflow:
+    uses: BrunoBrasolin/workflow-template/.github/workflows/nuget.yml@main
+    secrets: inherit
